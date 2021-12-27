@@ -6,9 +6,16 @@ DECIMALS = 8
 STARTING_PRICE = 411200000000
 
 
+def get_publish_account():
+    if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
+        return accounts[1]
+    else:
+        return accounts.add(config["wallets"]["from_key"])
+
+
 def get_account():
     if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
-        return accounts[0]
+        return accounts[2]
     else:
         return accounts.add(config["wallets"]["from_key"])
 

@@ -1,7 +1,7 @@
 from brownie import FundMe, network, config, MockV3Aggregator
 from scripts.helpful_scripts import (
     deploy_mocks,
-    get_account,
+    get_publish_account,
     LOCAL_BLOCKCHAIN_ENVIRONMENTS,
 )
 
@@ -9,7 +9,7 @@ from scripts.helpful_scripts import (
 def deploy_fund_me():
     # Get Account
     print("Getting account")
-    account = get_account()
+    account = get_publish_account()
     print(f"Account {account}")
 
     # configure dependencies
